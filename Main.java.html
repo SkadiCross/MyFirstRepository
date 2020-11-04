@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Scanner</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+
+
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Bienvenido a Tacos Mike&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">select = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int</span><span class="s1">[] tTacos = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">4</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s0">int</span><span class="s1">[] tBebidas = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">4</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">totalTacos = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">totalBebidas = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">totalCuenta = </span><span class="s3">0</span><span class="s0">;</span>
+
+
+        <span class="s0">while </span><span class="s1">(select == </span><span class="s3">1 </span><span class="s1">|| select == </span><span class="s3">2 </span><span class="s1">|| select == </span><span class="s3">0 </span><span class="s1">|| select == </span><span class="s3">3</span><span class="s1">) {</span>
+            <span class="s0">switch </span><span class="s1">(select) {</span>
+                <span class="s0">case </span><span class="s3">0</span><span class="s1">:</span>
+                    <span class="s1">select = menu()</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s3">1</span><span class="s1">:</span>
+                    <span class="s1">tTacos = tacos()</span><span class="s0">;</span>
+                    <span class="s1">select = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s3">2</span><span class="s1">:</span>
+                    <span class="s1">tBebidas = bebidas()</span><span class="s0">;</span>
+                    <span class="s1">select = </span><span class="s3">0</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+                <span class="s0">case </span><span class="s3">3</span><span class="s1">:</span>
+                    <span class="s1">totalTacos = (tTacos[</span><span class="s3">0</span><span class="s1">] * </span><span class="s3">10</span><span class="s1">) + (tTacos[</span><span class="s3">1</span><span class="s1">] * </span><span class="s3">8</span><span class="s1">) + (tTacos[</span><span class="s3">2</span><span class="s1">] * </span><span class="s3">7</span><span class="s1">) + (tTacos[</span><span class="s3">3</span><span class="s1">] * </span><span class="s3">9</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">totalBebidas = (tBebidas[</span><span class="s3">0</span><span class="s1">] * </span><span class="s3">11</span><span class="s1">) + (tBebidas[</span><span class="s3">1</span><span class="s1">] * </span><span class="s3">12</span><span class="s1">) + (tBebidas[</span><span class="s3">2</span><span class="s1">] * </span><span class="s3">13</span><span class="s1">) + (tBebidas[</span><span class="s3">3</span><span class="s1">] * </span><span class="s3">13</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">totalCuenta = totalBebidas + totalTacos</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;El total de tacos es = &quot; </span><span class="s1">+ totalTacos)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;El total de bebidas es = &quot; </span><span class="s1">+ totalBebidas)</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;El total de tu cuenta es = &quot; </span><span class="s1">+ totalCuenta)</span><span class="s0">;</span>
+                    <span class="s1">select = </span><span class="s3">4</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+
+
+            <span class="s1">}</span>
+
+
+        <span class="s1">}</span>
+
+
+    <span class="s1">}</span>
+
+    <span class="s0">public static int </span><span class="s1">menu() {</span>
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Menu&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para tacos presiona 1&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para bebidas presiona 2&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para el total de tu orden presiona 3&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para cancelar tu orden presiona 4&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">opcion = input.nextInt()</span><span class="s0">;</span>
+
+        <span class="s0">return </span><span class="s1">opcion</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int</span><span class="s1">[] tacos() {</span>
+        <span class="s0">int </span><span class="s1">topcion = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">tcantidad = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">tAsada = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">tPastor = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">tChorizo = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">tTripa = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">boolean </span><span class="s1">flag = </span><span class="s0">true;</span>
+        <span class="s0">int</span><span class="s1">[] ar = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">4</span><span class="s1">]</span><span class="s0">;</span>
+
+        <span class="s1">ar[</span><span class="s3">0</span><span class="s1">] = tAsada</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">1</span><span class="s1">] = tPastor</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">2</span><span class="s1">] = tChorizo</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">3</span><span class="s1">] = tTripa</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Menu de tacos&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Asada presiona 1&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Pastor presiona 2&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Chorizo presiona 3&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Tripa presiona 4&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Terminar orden presiona 5&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">while </span><span class="s1">(flag != </span><span class="s0">false</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cual tipo de taco quieres?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+            <span class="s1">topcion = input.nextInt()</span><span class="s0">;</span>
+
+            <span class="s0">if </span><span class="s1">(topcion == </span><span class="s3">1</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantos quieres de Asada?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">tcantidad = input.nextInt()</span><span class="s0">;</span>
+                <span class="s1">ar[</span><span class="s3">0</span><span class="s1">] = ar[</span><span class="s3">0</span><span class="s1">] + tcantidad</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(topcion == </span><span class="s3">2</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantos quieres de Pastor?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">tcantidad = input.nextInt()</span><span class="s0">;</span>
+                <span class="s1">ar[</span><span class="s3">1</span><span class="s1">] = ar[</span><span class="s3">1</span><span class="s1">] + tcantidad</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(topcion == </span><span class="s3">3</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantos quieres de Chorizo?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">tcantidad = input.nextInt()</span><span class="s0">;</span>
+                <span class="s1">ar[</span><span class="s3">2</span><span class="s1">] = ar[</span><span class="s3">2</span><span class="s1">] + tcantidad</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(topcion == </span><span class="s3">4</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantos quieres de Tripa?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                <span class="s1">tcantidad = input.nextInt()</span><span class="s0">;</span>
+                <span class="s1">ar[</span><span class="s3">3</span><span class="s1">] = ar[</span><span class="s3">3</span><span class="s1">] + tcantidad</span><span class="s0">;</span>
+            <span class="s1">}</span>
+            <span class="s0">if </span><span class="s1">(topcion == </span><span class="s3">5</span><span class="s1">) {</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Asada:&quot; </span><span class="s1">+ ar[</span><span class="s3">0</span><span class="s1">])</span><span class="s0">;</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Pastor:&quot; </span><span class="s1">+ ar[</span><span class="s3">1</span><span class="s1">])</span><span class="s0">;</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Chorizo:&quot; </span><span class="s1">+ ar[</span><span class="s3">2</span><span class="s1">])</span><span class="s0">;</span>
+                <span class="s1">System.out.println(</span><span class="s2">&quot;Tripa:&quot; </span><span class="s1">+ ar[</span><span class="s3">3</span><span class="s1">])</span><span class="s0">;</span>
+                <span class="s1">flag = </span><span class="s0">false;</span>
+            <span class="s1">}</span>
+
+        <span class="s1">}</span>
+
+        <span class="s0">return </span><span class="s1">ar</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public static int</span><span class="s1">[] bebidas() {</span>
+        <span class="s0">int </span><span class="s1">bopcion = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">bcantidad = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">bCoca = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">bSquirt = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">bJamaica = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int </span><span class="s1">bHorchata = </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s0">int</span><span class="s1">[] ar = </span><span class="s0">new int</span><span class="s1">[</span><span class="s3">4</span><span class="s1">]</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">0</span><span class="s1">] = bCoca</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">1</span><span class="s1">] = bSquirt</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">2</span><span class="s1">] = bJamaica</span><span class="s0">;</span>
+        <span class="s1">ar[</span><span class="s3">3</span><span class="s1">] = bHorchata</span><span class="s0">;</span>
+
+        <span class="s1">System.out.println(</span><span class="s2">&quot;Menu de Bebidas&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Coca presiona 1&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Squirt presiona 2&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Jamaica presiona 3&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Para Horchata presiona 4&quot; </span><span class="s1">+ </span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">&quot; </span><span class="s1">+ </span><span class="s2">&quot;Terminar orden presiona 5&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s0">while </span><span class="s1">(bopcion != </span><span class="s3">5</span><span class="s1">) {</span>
+            <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cual tipo de Bebida quieres?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Scanner input = </span><span class="s0">new </span><span class="s1">Scanner(System.in)</span><span class="s0">;</span>
+            <span class="s1">bopcion = input.nextInt()</span><span class="s0">;</span>
+
+            <span class="s0">switch </span><span class="s1">(bopcion) {</span>
+                <span class="s0">case </span><span class="s3">1</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantas Cocas quieres?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">bcantidad = input.nextInt()</span><span class="s0">;</span>
+                    <span class="s1">ar[</span><span class="s3">0</span><span class="s1">] = ar[</span><span class="s3">0</span><span class="s1">] + bcantidad</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+
+                <span class="s0">case </span><span class="s3">2</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantos Squirt quieres?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">bcantidad = input.nextInt()</span><span class="s0">;</span>
+                    <span class="s1">ar[</span><span class="s3">1</span><span class="s1">] = ar[</span><span class="s3">1</span><span class="s1">] + bcantidad</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+
+                <span class="s0">case </span><span class="s3">3</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantas  Jamaicas quieres?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">bcantidad = input.nextInt()</span><span class="s0">;</span>
+                    <span class="s1">ar[</span><span class="s3">2</span><span class="s1">] = ar[</span><span class="s3">2</span><span class="s1">] + bcantidad</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+
+                <span class="s0">case </span><span class="s3">4</span><span class="s1">:</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;¿Cuantas Horchatas quieres?&quot;</span><span class="s1">)</span><span class="s0">;</span>
+                    <span class="s1">bcantidad = input.nextInt()</span><span class="s0">;</span>
+                    <span class="s1">ar[</span><span class="s3">3</span><span class="s1">] = ar[</span><span class="s3">3</span><span class="s1">] + bcantidad</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+
+                <span class="s0">case </span><span class="s3">5</span><span class="s1">:</span>
+
+
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Cocas:&quot; </span><span class="s1">+ ar[</span><span class="s3">0</span><span class="s1">])</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Squirts:&quot; </span><span class="s1">+ ar[</span><span class="s3">1</span><span class="s1">])</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Jamaicas:&quot; </span><span class="s1">+ ar[</span><span class="s3">2</span><span class="s1">])</span><span class="s0">;</span>
+                    <span class="s1">System.out.println(</span><span class="s2">&quot;Horchatas:&quot; </span><span class="s1">+ ar[</span><span class="s3">3</span><span class="s1">])</span><span class="s0">;</span>
+                    <span class="s0">break;</span>
+
+
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+
+        <span class="s0">return </span><span class="s1">ar</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
